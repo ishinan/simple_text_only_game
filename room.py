@@ -64,12 +64,18 @@ Description: {self.room_info}
         print("Available items: ", ', '.join([ item for item in self.unit_items ]))
         print("Available directions: ", ', '.join([ door for door in self.direction_of_doors ]))
 
-        self.answer = 'default'
-        while len(self.answer.split()) != 2 or self.answer.split()[0] not in possible_verbs:
+        while True: 
             self.answer = input("What is your action?['verb item' or 'go direction']? ")
-        self.verb, self.x = self.answer.split()
-        print("Your answer is: ", self.verb, self.x)
-
+            self.answer_verb, self.answer_arg = self.answer.split()
+            if len(self.answer.split()) == 2 and self.answer_verb in possible_verbs:
+                if self.answer_verb == 'go' and self.answer_arg in self.direction_of_doors: 
+                    break
+                elif  self.answer_arg in self.unit_items:
+                    break
+                else:
+                    print("Hmm, try again.") 
+        print("Your answer is: ", self.answer_verb, self.answer_arg)
+        return [self.answer_verb, self.answer_arg] 
 
     def go_to_next_place(self, next_place):
         '''
