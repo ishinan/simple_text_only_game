@@ -2,6 +2,17 @@
 start.py
 
 Game start and controlled
+
+Class Room
+-----
+properties:
+    location
+    items
+    description
+
+
+    winning_condition
+    changine element
 '''
 # 1. Import room module
 # 2. Create multiple rooms( Enterance, Living, Kitchen, Bathroom, etc)
@@ -13,23 +24,22 @@ Game start and controlled
 
 from room import Room
 
-'''
-+----------+
-|          |
-|          |
-|          |
-+----------+
-
-
-
-'''
+# This disctionary decides how many rooms and connections to rooms
 play_space = {
 }
 
 
 def main():
     '''
+    main function
     '''
+    kitchen = Room("kitchen", "kitchen is spacious", ['knife'], ['east'])
+    living = Room("living", "living has couch and tv",['painting'], ['west'])
+
+    kitchen._print_properties()
+    living._print_properties()
+    living.interact_with_user() 
+    
     
 
 
