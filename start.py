@@ -10,3 +10,29 @@ Game start and controlled
 #    - Person can do action take or drop
 #    - Only if the person has a proper key, secret door can be opend for a treasure
 # 3. Connect them 
+
+from room import Room
+
+'''
++----------+
+|          |
+|          |
+|          |
++----------+
+
+
+
+'''
+play_space = {
+}
+
+
+def main():
+    '''
+    '''
+    
+
+
+
+if __name__ == '__main__':
+    main()
